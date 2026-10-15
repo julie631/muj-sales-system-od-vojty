@@ -1,0 +1,24 @@
+[
+  {
+    "id": "otazka-na-dopad",
+    "title": "Otázka na dopad",
+    "description": "Místo obecné bolesti („mám málo klientů\") konkrétní číslo za konkrétní období — a prospect si sám spočítá, kolik ho to stojí. Vlastní číslo bere vážněji než tvoje.",
+    "quote": "Když se podíváte na minulý týden, kolik termínů vám zůstalo volných?",
+    "trigger": "V discovery, kdykoli prospect popíše problém obecně.",
+    "crossLine": "Funguje v jakékoli linii — stačí najít jeho „termíny\", „zakázky\" nebo „klienty\".",
+    "closedValidated": true,
+    "validatedBy": ["Klára Dvořáková (ukázka, CLOSED 65)"],
+    "usedInCalls": ["2026-08-26_studio-lotos_CLOSED", "2026-10-02_kolar-servis_OPEN"]
+  },
+  {
+    "id": "spolecny-hovor-s-rozhodovatelem",
+    "title": "Společný hovor s rozhodovatelem",
+    "description": "Když prospect potřebuje „probrat to s někým\", nenech ho to vysvětlovat sám. Domluv hovor ve třech — a zjisti, na co se ten druhý zeptá.",
+    "quote": "Co kdybychom si dali hovor ve třech, ať mu to vysvětlím rovnou já?",
+    "trigger": "Námitka „musím to probrat se společníkem / manželem / šéfem\".",
+    "crossLine": "Hlavně B2B a rodinné firmy.",
+    "closedValidated": false,
+    "validatedBy": [],
+    "usedInCalls": ["2026-09-29_kancelar-novak_OPEN"]
+  }
+]

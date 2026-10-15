@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pitch-naslepo",
+    "title": "Pitch naslepo",
+    "whatHappens": "Prezentace začne dřív, než obchodník zjistí situaci prospecta.",
+    "why": "Scénář v Sell pak nemá z čeho stavět a prospect nemá důvod věřit, že se to týká jeho. Hovor bývá zdvořilý — a skončí „ozveme se\".",
+    "exampleQuote": "„Tak já vám rovnou ukážu, jak to u nás funguje.\"",
+    "exampleFromSlug": "2026-09-15_beauty-point_LOST",
+    "fix": "První otázka hovoru je vždycky o prospectovi: „Než vám cokoli ukážu — jak to u vás teď vypadá?\"",
+    "appearsInCalls": ["2026-09-15_beauty-point_LOST"]
+  },
+  {
+    "id": "rozmyslim-si-bez-otazky",
+    "title": "„Rozmyslím si\" bez otázky",
+    "whatHappens": "Na „musím si to rozmyslet\" obchodník jen souhlasí a hovor končí.",
+    "why": "Za „rozmyslím si\" je skoro vždy konkrétní pochybnost (cena, důvěra, čas). Když ji nevytáhneš na hovoru, prospect ji vyřeší sám — obvykle „ne\".",
+    "exampleQuote": "„Jasně, v pohodě, rozmyslete si to.\"",
+    "exampleFromSlug": "2026-09-15_beauty-point_LOST",
+    "fix": "„Jasně. Co konkrétně si potřebujete rozmyslet — cenu, jestli to bude fungovat, nebo něco jiného?\"",
+    "appearsInCalls": ["2026-09-15_beauty-point_LOST", "2026-10-02_kolar-servis_OPEN"]
+  }
+]

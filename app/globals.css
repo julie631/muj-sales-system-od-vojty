@@ -1,0 +1,433 @@
+@import "tailwindcss";
+
+:root {
+  /* Vzhled — světlý, čistý tech */
+  --page-bg: #f4f4f4;
+  --surface: #ffffff;
+  --surface-muted: #f9f9f9;
+  --surface-elevated: #ffffff;
+  --border-soft: rgba(10, 10, 10, 0.09);
+  --border-mid: rgba(10, 10, 10, 0.14);
+  --border-strong: rgba(10, 10, 10, 0.22);
+
+  /* Text — čistá near-black */
+  --ink: #0a0a0a;
+  --ink-strong: #0a0a0a;
+  --ink-muted: rgba(10, 10, 10, 0.58);
+  --ink-dim: rgba(10, 10, 10, 0.42);
+  --ink-faint: rgba(10, 10, 10, 0.3);
+
+  /* Brand — accent #1a5ada */
+  --brand: #1a5ada;
+  --brand-dark: #1546a8;
+  --brand-tint: #e9edf6;
+
+  /* Outcomes */
+  --closed: #16a34a;
+  --closed-tint: #e8f5ec;
+  --lost: #dc2626;
+  --lost-tint: #fde9e9;
+  --ghost: #737373;
+  --ghost-tint: #efeeec;
+  --odlozeno: #b45309;
+  --odlozeno-tint: #fbf1e0;
+  --open: #0284c7;
+  --open-tint: #e3f1fb;
+  --mock: #7c3aed;
+  --mock-tint: #eee6fb;
+
+  /* Highlight (search match) */
+  --highlight: #fff3a8;
+
+  /* ── Doplňkové barvy a povrchy ── */
+  --accent: var(--brand);
+  --accent-soft: #e7eefc;
+  --accent-ink: #1a52c4;
+  --surface-2: #f7f6f2;
+  --surface-3: #ebe9e2;
+  --ok: #157037;
+  --ok-soft: #e4f4ea;
+  --warn: #845310;
+  --warn-soft: #f8efd9;
+  --danger: #b3261e;
+  --danger-soft: #fbe6e2;
+  --line: rgba(17, 17, 20, 0.1);
+  --line-soft: rgba(17, 17, 20, 0.055);
+  --muted-fg: var(--ink-muted);
+  --faint: #6d6e74;
+  --dot: rgba(10, 10, 10, 0.06);
+  --shadow-md: 0 10px 30px -12px rgba(17, 17, 20, 0.18);
+}
+
+@theme inline {
+  --color-background: var(--page-bg);
+  --color-foreground: var(--ink);
+  --color-page: var(--page-bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-dim: var(--ink-dim);
+  --color-brand: var(--brand);
+  --color-border-soft: var(--border-soft);
+  --color-border-mid: var(--border-mid);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-sans);
+  /* Cold Calling mode colors */
+  --color-accent: var(--accent);
+  --color-accentSoft: var(--accent-soft);
+  --color-accentInk: var(--accent-ink);
+  --color-surface2: var(--surface-2);
+  --color-surface3: var(--surface-3);
+  --color-ok: var(--ok);
+  --color-okSoft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warnSoft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-dangerSoft: var(--danger-soft);
+  --color-line: var(--line);
+  --color-lineSoft: var(--line-soft);
+  --color-muted: var(--muted-fg);
+  --color-faint: var(--faint);
+  --color-bg: var(--page-bg);
+}
+
+html,
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Utility colors ────────────────────────────────────────────── */
+
+.bg-page { background: var(--page-bg); }
+.bg-surface { background: var(--surface); }
+.bg-surface-muted { background: var(--surface-muted); }
+
+.text-ink { color: var(--ink); }
+.text-ink-strong { color: var(--ink-strong); }
+.text-ink-muted { color: var(--ink-muted); }
+.text-ink-dim { color: var(--ink-dim); }
+.text-ink-faint { color: var(--ink-faint); }
+.text-brand { color: var(--brand); }
+
+.border-soft { border-color: var(--border-soft); }
+.border-mid { border-color: var(--border-mid); }
+
+/* ── Card / button surfaces ─────────────────────── */
+
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(15, 15, 15, 0.04);
+}
+
+.surface-card-hover {
+  transition: border-color 160ms ease, box-shadow 160ms ease,
+    background 160ms ease;
+}
+.surface-card-hover:hover {
+  border-color: var(--border-mid);
+  box-shadow: 0 2px 8px rgba(15, 15, 15, 0.06);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background 160ms ease, transform 120ms ease;
+  border: 1px solid transparent;
+}
+.btn-primary:hover {
+  background: var(--brand-dark);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink-muted);
+  border: 1px solid var(--border-mid);
+  font-size: 0.875rem;
+  transition: background 160ms ease, color 160ms ease;
+}
+.btn-ghost:hover {
+  background: var(--surface-muted);
+  color: var(--ink);
+}
+
+/* ── Headings ────────────────────────────────────────────────────── */
+
+.font-serif { font-family: var(--font-sans), sans-serif; }
+.font-mono { font-family: var(--font-mono), ui-monospace, "SF Mono",
+    Monaco, Menlo, Consolas, monospace; }
+
+.serif-display {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink-strong);
+}
+
+/* ── Prose for rendered call MD analysis ────────────────────────── */
+
+.prose-call {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 720px;
+}
+.prose-call > *:first-child { margin-top: 0; }
+.prose-call > *:last-child { margin-bottom: 0; }
+
+.prose-call h1,
+.prose-call h2,
+.prose-call h3,
+.prose-call h4 {
+  font-family: var(--font-sans), sans-serif;
+  color: var(--ink-strong);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.prose-call h1 {
+  font-size: 2.25em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+.prose-call h2 {
+  font-size: 1.6em;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+}
+.prose-call h3 {
+  font-size: 1.3em;
+  margin-top: 1.6em;
+  margin-bottom: 0.4em;
+}
+.prose-call h4 {
+  font-size: 1.05em;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  color: var(--ink-strong);
+  font-weight: 600;
+}
+.prose-call p {
+  margin: 0.85em 0;
+}
+.prose-call ul,
+.prose-call ol {
+  margin: 0.9em 0;
+  padding-left: 1.4em;
+}
+.prose-call li {
+  margin: 0.35em 0;
+}
+.prose-call ul { list-style: disc; }
+.prose-call ol { list-style: decimal; }
+.prose-call li::marker {
+  color: var(--ink-dim);
+}
+.prose-call strong {
+  color: var(--ink-strong);
+  font-weight: 600;
+}
+.prose-call em {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+.prose-call blockquote {
+  border-left: 3px solid var(--border-mid);
+  padding: 0.4em 1em;
+  margin: 1.1em 0;
+  background: var(--surface-muted);
+  border-radius: 0 6px 6px 0;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+.prose-call blockquote p { margin: 0.4em 0; }
+.prose-call code {
+  background: var(--surface-muted);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+  color: var(--ink-strong);
+  border: 1px solid var(--border-soft);
+}
+.prose-call pre {
+  background: var(--surface-muted);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.1em 0;
+  font-size: 0.85em;
+  line-height: 1.55;
+}
+.prose-call pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+.prose-call table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 0.92em;
+}
+.prose-call th,
+.prose-call td {
+  border: 1px solid var(--border-soft);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-call th {
+  background: var(--surface-muted);
+  font-weight: 600;
+  color: var(--ink-strong);
+}
+.prose-call a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 90, 218, 0.4);
+  text-underline-offset: 2px;
+}
+.prose-call a:hover {
+  text-decoration-color: var(--brand);
+}
+.prose-call hr {
+  border: none;
+  border-top: 1px solid var(--border-soft);
+  margin: 1.6em 0;
+}
+
+/* ── Accordion (closer sekce) ───────────────────────────────────── */
+
+.accordion-row {
+  border-top: 1px solid var(--border-soft);
+}
+.accordion-row:last-child {
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.accordion-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  user-select: none;
+}
+.accordion-summary::-webkit-details-marker { display: none; }
+
+.accordion-chevron {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--ink-dim);
+  transition: transform 160ms ease;
+}
+details[open] > .accordion-summary .accordion-chevron {
+  transform: rotate(90deg);
+}
+
+.accordion-body {
+  padding: 0.25rem 0 1.5rem 2.1rem;
+  animation: accordion-fade 180ms ease;
+}
+
+@keyframes accordion-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inline citation quotes inside moments */
+.moment-quote {
+  border-left: 3px solid var(--brand);
+  background: var(--brand-tint);
+  border-radius: 0 6px 6px 0;
+  padding: 0.55rem 0.9rem;
+  margin: 0.6rem 0;
+  font-style: italic;
+  color: var(--ink-strong);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* Score bar */
+.score-track {
+  background: var(--surface-muted);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* ── Scrollbar (light) ───────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-mid);
+  border-radius: 6px;
+  border: 2px solid var(--page-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* Selection */
+::selection {
+  background: var(--brand-tint);
+  color: var(--ink-strong);
+}
+
+/* ── Cold Calling mode utilities (ported) ──────────────────────── */
+.tabnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.dotgrid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--dot) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
+.shadow-card {
+  box-shadow: var(--shadow-md);
+}
+.font-display {
+  font-family: var(--font-sans), sans-serif;
+}
